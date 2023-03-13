@@ -1,0 +1,60 @@
+	import javax.swing.*;
+	import java.awt.event.*;
+	import java.awt.Font;
+	
+	public class Answer {
+	   public static void main(String[] args) 
+	   // Create a JFrame and set its title and default close operation
+	   {
+	      JFrame frame = new JFrame("Exam System");
+
+	   // Create a JPanel to hold the components of the GUI
+	      JPanel panel = new JPanel();
+	      panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+	   // Create a ButtonGroup to group the radio button answer choices together
+	      JLabel questionLabel = new JLabel("Who originally developed the Java programming language?");
+	      questionLabel.setFont(new Font("Tahoma", Font.BOLD, 11));
+	      panel.add(questionLabel);
+	
+	      ButtonGroup group = new ButtonGroup();
+	      // Create four JRadioButton objects for the answer choices and add them to the button group and panel
+	      JRadioButton choice1 = new JRadioButton("Timbermers lee");
+	      JRadioButton choice2 = new JRadioButton("Guido Van Rossum");
+	      final JRadioButton choice3 = new JRadioButton("James Gosling");
+	      JRadioButton choice4 = new JRadioButton("Mark Zuckerberg");
+	
+	      group.add(choice1);
+	      group.add(choice2);
+	      group.add(choice3);
+	      group.add(choice4);
+	
+	      panel.add(choice1);
+	      panel.add(choice2);
+	      panel.add(choice3);
+	      panel.add(choice4);
+	
+	      JButton submitButton = new JButton("Submit");
+	      submitButton.addActionListener(new ActionListener() {
+	         @Override
+	         public void actionPerformed(ActionEvent e) {
+	            if (choice3.isSelected()) {
+	               JOptionPane.showMessageDialog(null, "YOUR ANSWER IS CORRECT!");
+	            } else {
+	               JOptionPane.showMessageDialog(null, "PLEASE TRY AGAIN.");
+	            }
+	         }
+	      });
+	
+	      panel.add(submitButton);
+	      // Add the panel to the frame, pack the components to their preferred size, and set the frame visible
+	      frame.getContentPane().add(panel);
+	      frame.getContentPane().add(panel);
+	      frame.pack();
+	      frame.setVisible(true);
+	   }
+
+	public void setVisible(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+	}
